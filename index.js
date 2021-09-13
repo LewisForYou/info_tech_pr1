@@ -6,14 +6,14 @@ let secondNum = 50
 
 Calc(firstNum, secondNum)
 function Calc(firstNum, secondNum){
-    if((secondNum || firstNum) < 0){
+    if((secondNum || firstNum) < 0){ //проверяем больше ли нуля числа 
         console.log(`Входные числа не могут быть меньше нуля!`);
     } else {
         let arr = []
         for(let i = firstNum; i <= secondNum; i++){
         arr.push(i)
         }
-        if (arr.length > 3){
+        if (arr.length > 3){ // если больше трех чисел в массиве
             let newArr = arr.slice(-3)
             let a = newArr[0]
             let b = newArr[1]
