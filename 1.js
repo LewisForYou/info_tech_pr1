@@ -1,24 +1,29 @@
-function calc(){
-let arr = []
-for(let i = 1; i <= 50; i++){
-    arr.push(i)
-}
-let newarr = arr.slice(-3)
+/* Задача: посчитать максимальную площадь треугольника, если дан массив от 0 до 50
+ Очевидно, что это будут три последние числа, тогда берём их */
 
-// const k  = new Set(newarr)
-// let sort = arr.filter(e => !k.has(e))
-// console.log(sort)
+let firstNum = 1
+let secondNum = 50
 
-let a = newarr[0]
-let b = newarr[1]
-let c = newarr[2]
-console.log(a, b, c)
-let g = (a + b +c)
-console.log(g)
-let p = g / 2
-console.log(p)
-let s = p*(p-a)*(p-b)*(p-c)
-let res = Math.sqrt(s)
-console.log(res)
+Calc(firstNum, secondNum)
+function Calc(firstNum, secondNum){
+    if((secondNum || firstNum) < 0){
+        console.log(`Входные числа не могут быть меньше нуля!`);
+    } else {
+        let arr = []
+        for(let i = firstNum; i <= secondNum; i++){
+        arr.push(i)
+        }
+        if (arr.length > 3){
+            let newArr = arr.slice(-3)
+            let a = newArr[0]
+            let b = newArr[1]
+            let c = newArr[2]
+            console.log(`Сторона 1 = ${a}, сторона 2 = ${b}, сторона 3 = ${c}`)
+            let p = (a + b + c) / 2
+            let Sum = Math.sqrt(p*(p-a)*(p-b)*(p-c))
+            console.log(`Плоащль треугольника - ${Sum}`)
+        } else {
+            console.log(`Длина масива минимум 3 числа, у вас - ${arr.length}`)
+        }
+    }
 }
-calc()
