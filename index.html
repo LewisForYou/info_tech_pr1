@@ -9,29 +9,33 @@
 <body>
     <input id="myInput">
     <div id="dna"></div>
+    <span id="notify">Нажми, чтобы посчитать - </span>
+    <button  onclick="Calculate(arr)">Посчитать</button>
     <script>
-        var myArray = document.getElementById('myInput').value.split(',')
+        let myArray = document.getElementById('myInput').value.split(" ")
         arr = myArray.map(Number);
-        Calculate(arr)
+        // Calculate(arr)
         function Calculate(arr){
         if (arr.length < 3){
-            console.log(`Длина массива меньше трёх числе!`)
+            document.getElementById("notify").textContent = "Длина массива меньше трёх числе!";
         } else {
-            arr.length = 3
             arr.sort((a, b) => b - a);
+            arr.length = 3
             if ((arr[0] && arr[1] && arr[2]) > 0){
                 let a = arr[0]
                 let b = arr[1]
                 let c = arr[2]
-                console.log(`Сторона 1 = ${a}, сторона 2 = ${b}, сторона 3 = ${c}`)
+                document.getElementById("notify").textContent = "Сторона 1 = "+ a + " сторона 2 = " + b + " сторона 3 =" + c;
                 let p = (a + b + c) / 2
                 let Sum = Math.sqrt(p*(p-a)*(p-b)*(p-c))
-                console.log(`Плоащль треугольника - ${Sum}`)
-                document.getElementById("dna").textContent = "Плоащь треугольника: " + Sum;
+                document.getElementById("dna").textContent = "Площадь теугольника: " + Sum;
                 } else {
-                console.log(`В массиве имеется отрицательное число!`)
+                    document.getElementById("notify").textContent = "В массиве имеется отрицательное число";
                 }
             }
+        }
+        function test(){
+            console.log(`test`)
         }
     </script>
 </body>
