@@ -7,7 +7,7 @@ function Calculate(arr){
     } else {
         arr.sort((a, b) => b - a);
         arr.length = 3
-        if ((arr[0] && arr[1] && arr[2]) > 0){
+        if ((arr[0] || arr[1] || arr[2]) > 0){
             let a = arr[0]
             let b = arr[1]
             let c = arr[2]
