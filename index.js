@@ -5,8 +5,8 @@ function Calculate(arr){
     if (arr.length < 3){
         console.log(`Длина массива меньше трёх числе!`)
     } else {
-        arr.length = 3
         arr.sort((a, b) => b - a);
+        arr.length = 3
         if ((arr[0] && arr[1] && arr[2]) > 0){
             let a = arr[0]
             let b = arr[1]
