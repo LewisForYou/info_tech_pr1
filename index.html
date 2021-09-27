@@ -17,7 +17,7 @@
         // Calculate(arr)
         function Calculate(arr){
         if (arr.length < 3){
-            document.getElementById("notify").textContent = "Длина массива меньше трёх числе!";
+            document.getElementById("notify").textContent = "EROR! Длина массива меньше трёх числе!";
         } else {
             arr.sort((a, b) => b - a);
             arr.length = 3
@@ -25,18 +25,21 @@
                 let a = arr[0]
                 let b = arr[1]
                 let c = arr[2]
-                document.getElementById("notify").textContent = "Сторона 1 = "+ a + " сторона 2 = " + b + " сторона 3 =" + c;
-                let p = (a + b + c) / 2
-                let Sum = Math.sqrt(p*(p-a)*(p-b)*(p-c))
-                document.getElementById("dna").textContent = "Площадь теугольника: " + Sum;
-                } else {
-                    document.getElementById("notify").textContent = "В массиве имеется отрицательное число";
-                }
+                    if (((a + b) > c) && ((b + c) > a) && ((c + a) > b)){
+                        document.getElementById("notify").textContent = "Сторона 1 = "+ a + " сторона 2 = " + b + " сторона 3 =" + c;
+                        let p = (a + b + c) / 2
+                        let Sum = Math.sqrt(p*(p-a)*(p-b)*(p-c))
+                        document.getElementById("dna").textContent = "Площадь теугольника: " + Sum;
+                    } else { 
+                        document.getElementById("notify").textContent = "EROR! (сторона1 + сторона2) < сторона3 ";
+                    }
+                } 
             }
         }
-        function test(){
-            console.log(`test`)
-        }
+            // sql ex
+            // engine nginx
+            // docker
+            // postgres
     </script>
 </body>
 </html>
